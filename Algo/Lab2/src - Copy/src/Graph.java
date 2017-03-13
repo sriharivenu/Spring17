@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-import com.sun.javafx.collections.MappingChange.Map;
+//import com.sun.javafx.collections.MappingChange.Map;
 
 /**
  */
@@ -62,7 +62,7 @@ public class Graph {
     		input_file = new BufferedReader(new FileReader(keys));
         	while((keys_line = input_file.readLine()) != null){
         		words = keys_line.split(": ");
-        		
+        		//System.out.println(keys_line);
         		if(words.length == 1){
         			words[0] = words[0].substring(0, words[0].length() - 1);
         			edge_list.put(words[0], "none");
@@ -72,6 +72,8 @@ public class Graph {
         		eqv_number.put(words[0], house_number);
         		house_number += 1;
         	}
+        	//System.out.println(edge_list.keySet());
+        	//System.out.println(eqv_number.keySet());
         	input_file.close();
         	}
         catch(FileNotFoundException exception){

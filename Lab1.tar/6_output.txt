@@ -1,8 +1,0 @@
-m=6 n=6
-Worker 0 Job 2
-Worker 1 Job 1
-Worker 2 Job 0
-Worker 3 Job 4
-Worker 4 Job 5
-Worker 5 Job 3
-Gale-Shapley: stable? true

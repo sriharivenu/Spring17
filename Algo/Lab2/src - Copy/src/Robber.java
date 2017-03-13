@@ -10,7 +10,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 
-import com.sun.javafx.collections.MappingChange.Map;
+//import com.sun.javafx.collections.MappingChange.Map;
 
 /**
  */
@@ -176,6 +176,8 @@ public class Robber {
     				else{
     					time = Float.valueOf(buyers[1]);
     				}
+    				if(time >= 12)
+    					time -= 12;
     				time += 12;
     			}
     			else{
@@ -204,7 +206,7 @@ public class Robber {
     	catch(IOException exception){
     		System.out.println("error in reading file");
     	}
-    	
+    	//System.out.println(buyers_list.keySet());
     	while(!buyers_list.isEmpty()){
     		if(first_element){
     			first_element = false;
@@ -239,6 +241,8 @@ public class Robber {
     					time = Float.valueOf(buyers[0]);
     				}
     				start_time = time;
+    				if(time >= 12)
+    					start_time -= 12;
     				start_time += 12;
     			}
     			else{
