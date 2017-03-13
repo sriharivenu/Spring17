@@ -11,7 +11,7 @@ public class Driver {
        Graph neighborhood = new Graph("unlocked.txt", "keys.txt");
        Robber fruitcake = new Robber();
        fruitcake.canRobAllHouses(neighborhood);
-       //fruitcake.maximizeLoot("lootList.txt");
-       //fruitcake.scheduleMeetings("buyerList.txt");
+       fruitcake.maximizeLoot("ingredients.txt");
+       fruitcake.scheduleMeetings("buyers.txt");
     }
 }

@@ -17,13 +17,20 @@ public class Graph {
      * Creates a graph to represent the neighborhood, where unlocked is the file name for the unlocked houses
      * and keys is the file name for which houses have which keys.
      */
+	
+	// Variables used for creating Graph.
+	
 	String keys_line;
 	String [] words;
-	HashMap<String, String> edge_list;
+	HashMap<String, String> edge_list; // The adjacency list.
     String unlocked_houses;
     int house_number = 0;
-    HashMap<String, Integer> eqv_number;
-
+    HashMap<String, Integer> eqv_number;// Number for each house for ease of iteration.
+    
+    
+    
+    // Reading given files for creating each graph will take O(n) complexity where "n" is number of houses.
+    
     public Graph(String unlocked, String keys) {
         
     	// Implementing the graph by taking the value from the input files.
@@ -77,6 +84,7 @@ public class Graph {
 
     /*
      * This method should return true if the Graph contains the vertex described by the input String.
+     * The complexity of this method is O(1).
      */
     public boolean containsVertex(String node) {
         //Using map's inbuilt function
@@ -86,6 +94,7 @@ public class Graph {
     /*
      * This method should return true if there is a direct edge from the vertex
      * represented by start String and end String.
+     * The complexity of this method is O(n) in worst case, where "n" is number of houses.
      */
     public boolean containsEdge(String start, String end) {
     	if(!containsVertex(start)){
@@ -116,6 +125,7 @@ public class Graph {
     /*
      * This method returns true if the house represented by the input String is locked
      * and false is the house has been left unlocked.
+     * This has the complexity of O(n), where "n" is the worst case complexity.
      */
     public boolean isLocked(String house) {
        if(!containsVertex(house)){
@@ -134,14 +144,21 @@ public class Graph {
        return is_locked;
     }
     
+    // This function returns all the houses present in the list.
+    
     public Set getHouses(){
     	return (edge_list.keySet());
     			
     }
     
+    
+    // This returns the keys present in a house.
+    
     public String holdingKeys(String house){
     	return edge_list.get(house);
     }
+    
+    // This returns the number of lines incoming to the node, i.e. the number of keys each house has.
     
     public int[] counter(){
     	int [] count = new int [edge_list.size()];
@@ -163,6 +180,9 @@ public class Graph {
     	}
     	return count;
     }
+    
+    
+    // This provides the equivalent numbers for each house.
     
     public int getNumber(String house){
     	if(!containsVertex(house)){
