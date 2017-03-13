@@ -1,0 +1,6 @@
+m=4 n=4
+Worker 0 Job 2
+Worker 1 Job 0
+Worker 2 Job 3
+Worker 3 Job 1
+Gale-Shapley: stable? true
