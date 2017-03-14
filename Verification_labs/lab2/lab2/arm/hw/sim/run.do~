@@ -1,4 +1,0 @@
-# vcd file vcdtest.vcd
-# vcd add /*
-assertion fail -limit 1 -enable -recursive
-run -all
